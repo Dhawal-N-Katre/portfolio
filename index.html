@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Dhawal Katre | Portfolio</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+
+<style>
+*{margin:0;padding:0;box-sizing:border-box;}
+
+body{
+  font-family:'Poppins',sans-serif;
+  background:#020617;
+  color:white;
+  overflow-x:hidden;
+}
+
+/* STICKER BG */
+.bg{
+  position:fixed;
+  inset:0;
+  z-index:-3;
+  overflow:hidden;
+}
+.sticker{
+  position:absolute;
+  width:140px;
+  height:140px;
+  background:linear-gradient(135deg,#38bdf8,#22d3ee);
+  opacity:0.12;
+  filter:blur(30px);
+  border-radius:40px;
+  animation:float 20s linear infinite;
+}
+.sticker:nth-child(1){top:10%;left:10%;}
+.sticker:nth-child(2){top:60%;left:20%;animation-duration:25s;}
+.sticker:nth-child(3){top:30%;left:70%;animation-duration:18s;}
+.sticker:nth-child(4){top:70%;left:80%;animation-duration:30s;}
+
+@keyframes float{
+  0%{transform:translateY(0) rotate(0);}
+  50%{transform:translateY(-150px) rotate(180deg);}
+  100%{transform:translateY(0) rotate(360deg);}
+}
+
+/* CURSOR */
+.cursor{
+  width:18px;
+  height:18px;
+  border:2px solid #38bdf8;
+  border-radius:50%;
+  position:fixed;
+  pointer-events:none;
+  transform:translate(-50%,-50%);
+  z-index:9999;
+}
+
+/* CRYSTALS */
+.crystal{
+  position:fixed;
+  width:6px;
+  height:6px;
+  background:linear-gradient(45deg,#38bdf8,#22d3ee);
+  transform:rotate(45deg);
+  pointer-events:none;
+  animation:fall 1s linear forwards;
+}
+@keyframes fall{
+  to{
+    transform:translateY(90px) rotate(180deg);
+    opacity:0;
+  }
+}
+
+/* NAV */
+nav{
+  position:fixed;
+  width:100%;
+  padding:15px 8%;
+  backdrop-filter:blur(12px);
+  background:rgba(0,0,0,0.4);
+  display:flex;
+  justify-content:space-between;
+  z-index:1000;
+}
+nav a{
+  color:white;
+  margin-left:20px;
+  text-decoration:none;
+}
+nav a:hover{color:#38bdf8}
+
+/* HERO */
+.hero{
+  height:100vh;
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+  align-items:center;
+  text-align:center;
+}
+.hero h1{
+  font-size:60px;
+  background:linear-gradient(90deg,#38bdf8,#22d3ee);
+  -webkit-background-clip:text;
+  color:transparent;
+  animation:pop 1.2s ease;
+}
+.hero p{opacity:0.8;margin-top:15px;}
+
+@keyframes pop{
+  from{opacity:0;transform:scale(0.7);}
+  to{opacity:1;transform:scale(1);}
+}
+
+/* SECTIONS */
+section{padding:100px 10%;}
+.title{font-size:36px;color:#38bdf8;margin-bottom:30px;}
+
+/* CARDS */
+.card{
+  background:rgba(255,255,255,0.08);
+  backdrop-filter:blur(15px);
+  border-radius:20px;
+  padding:30px;
+  margin-bottom:30px;
+  box-shadow:0 20px 40px rgba(0,0,0,0.5);
+  transform:translateY(40px);
+  opacity:0;
+  transition:0.8s;
+}
+.card.show{transform:translateY(0);opacity:1;}
+
+/* SKILLS */
+.skills{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(150px,1fr));
+  gap:20px;
+}
+.skill{
+  padding:25px;
+  text-align:center;
+  border-radius:15px;
+  background:rgba(255,255,255,0.1);
+  transition:0.3s;
+}
+.skill:hover{
+  transform:translateY(-10px);
+  box-shadow:0 0 25px #38bdf8;
+}
+
+footer{text-align:center;padding:30px;opacity:0.6;}
+
+@media(max-width:768px){
+  .cursor{display:none;}
+}
+</style>
+</head>
+
+<body>
+
+<!-- STICKERS -->
+<div class="bg">
+  <div class="sticker"></div>
+  <div class="sticker"></div>
+  <div class="sticker"></div>
+  <div class="sticker"></div>
+</div>
+
+<div class="cursor"></div>
+
+<nav>
+  <h3>Dhawal</h3>
+  <div>
+    <a href="#about">About</a>
+    <a href="#skills">Skills</a>
+    <a href="#projects">Projects</a>
+    <a href="#contact">Contact</a>
+  </div>
+</nav>
+
+<div class="hero">
+  <h1>Dhawal Katre</h1>
+  <p>Computer Engineering Student | Software Developer</p>
+</div>
+
+<section id="about">
+  <h2 class="title">About Me</h2>
+  <div class="card reveal">Passionate developer focused on modern web and real skills.</div>
+</section>
+
+<section id="skills">
+  <h2 class="title">Skills</h2>
+  <div class="skills">
+    <div class="skill reveal">C++</div>
+    <div class="skill reveal">HTML</div>
+    <div class="skill reveal">CSS</div>
+    <div class="skill reveal">JavaScript</div>
+  </div>
+</section>
+
+<section id="projects">
+  <h2 class="title">Projects</h2>
+  <div class="card reveal">🔥 Portfolio Website</div>
+  <div class="card reveal">🧮 Calculator App</div>
+  <div class="card reveal">📝 To-Do List</div>
+</section>
+
+<section id="contact">
+  <h2 class="title">Contact</h2>
+  <div class="card reveal">
+    Email: katredhawal9211@gmail.com<br>
+    Location: Nagpur
+  </div>
+</section>
+
+<footer>© 2026 Dhawal Katre | Built with ❤</footer>
+
+<!-- THREE.JS -->
+<script src="https://cdn.jsdelivr.net/npm/three@0.152.2/build/three.min.js"></script>
+
+<script>
+/* CURSOR + CRYSTALS */
+const cursor = document.querySelector(".cursor");
+document.addEventListener("mousemove", e=>{
+  cursor.style.left=e.clientX+"px";
+  cursor.style.top=e.clientY+"px";
+
+  const c=document.createElement("div");
+  c.className="crystal";
+  c.style.left=e.clientX+"px";
+  c.style.top=e.clientY+"px";
+  document.body.appendChild(c);
+  setTimeout(()=>c.remove(),1000);
+});
+
+/* SCROLL REVEAL */
+const reveals=document.querySelectorAll(".reveal");
+window.addEventListener("scroll",()=>{
+  reveals.forEach(el=>{
+    if(el.getBoundingClientRect().top<window.innerHeight-100){
+      el.classList.add("show");
+    }
+  });
+});
+
+/* THREE.JS BG */
+const scene=new THREE.Scene();
+const camera=new THREE.PerspectiveCamera(75,window.innerWidth/window.innerHeight,0.1,1000);
+camera.position.z=5;
+
+const renderer=new THREE.WebGLRenderer({alpha:true});
+renderer.setSize(window.innerWidth,window.innerHeight);
+renderer.setPixelRatio(window.devicePixelRatio);
+renderer.domElement.style.position="fixed";
+renderer.domElement.style.top=0;
+renderer.domElement.style.left=0;
+renderer.domElement.style.zIndex="-2";
+document.body.appendChild(renderer.domElement);
+
+const starGeo=new THREE.BufferGeometry();
+const starCount=1600;
+const starPos=[];
+
+for(let i=0;i<starCount;i++){
+  starPos.push(
+    (Math.random()-0.5)*50,
+    (Math.random()-0.5)*50,
+    (Math.random()-0.5)*50
+  );
+}
+
+starGeo.setAttribute("position",new THREE.Float32BufferAttribute(starPos,3));
+
+const starMat=new THREE.PointsMaterial({
+  color:0x38bdf8,
+  size:0.05,
+  transparent:true
+});
+
+const stars=new THREE.Points(starGeo,starMat);
+scene.add(stars);
+
+function animate(){
+  requestAnimationFrame(animate);
+  stars.rotation.y+=0.0008;
+  stars.rotation.x+=0.0003;
+  renderer.render(scene,camera);
+}
+animate();
+
+window.addEventListener("resize",()=>{
+  camera.aspect=window.innerWidth/window.innerHeight;
+  camera.updateProjectionMatrix();
+  renderer.setSize(window.innerWidth,window.innerHeight);
+});
+</script>
+
+</body>
+</html>
+
+
