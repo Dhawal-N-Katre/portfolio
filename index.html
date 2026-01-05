@@ -2,173 +2,168 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
+<title>Dhawal Katre | Developer</title>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Dhawal Katre | Web Developer Portfolio</title>
-<meta name="description" content="Portfolio of Dhawal Katre, Computer Engineering student and Web Developer.">
-
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
 
 <style>
-*{margin:0;padding:0;box-sizing:border-box;}
-html{scroll-behavior:smooth;}
-
+:root{
+  --bg:#020617;
+  --card:#020d2b;
+  --neon:#00f7ff;
+  --blue:#00bfff;
+  --text:#e5e7eb;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
 body{
-  font-family:'Poppins',sans-serif;
-  color:white;
-  background:radial-gradient(circle at top,#020617,#000);
+  font-family:Poppins,sans-serif;
+  background:#020617;
+  color:var(--text);
   overflow-x:hidden;
 }
 
-/* 🌌 PREMIUM WALLPAPER */
-.wallpaper{
+/* PARTICLES */
+canvas{
   position:fixed;
   inset:0;
-  background:
-    radial-gradient(circle at 20% 20%, #38bdf840, transparent 40%),
-    radial-gradient(circle at 80% 30%, #22d3ee40, transparent 40%),
-    radial-gradient(circle at 50% 80%, #6366f140, transparent 40%);
-  z-index:-3;
+  z-index:-1;
 }
 
-/* FLOATING STICKERS */
-.sticker{
-  position:absolute;
-  width:180px;height:180px;
-  background:linear-gradient(135deg,#38bdf8,#22d3ee);
-  filter:blur(60px);
-  opacity:0.25;
-  animation:float 18s ease-in-out infinite;
-}
-.sticker:nth-child(1){top:10%;left:10%;}
-.sticker:nth-child(2){top:60%;left:15%;animation-delay:3s;}
-.sticker:nth-child(3){top:30%;left:70%;animation-delay:6s;}
-.sticker:nth-child(4){top:70%;left:75%;animation-delay:9s;}
-
-@keyframes float{
-  50%{transform:translateY(-120px) translateX(40px);}
-}
-
-/* ✨ CUSTOM CURSOR */
+/* CURSOR */
 .cursor{
-  width:12px;height:12px;
-  background:#38bdf8;
+  width:16px;height:16px;
+  border:2px solid var(--neon);
   border-radius:50%;
   position:fixed;
   pointer-events:none;
-  z-index:9999;
-  box-shadow:0 0 20px #38bdf8,0 0 40px #22d3ee;
-}
-.cursor-ring{
-  width:40px;height:40px;
-  border:2px solid #38bdf8;
-  border-radius:50%;
-  position:fixed;
-  pointer-events:none;
-  z-index:9998;
-  transition:0.15s ease;
+  z-index:999;
 }
 
 /* NAV */
 nav{
-  position:fixed;width:100%;
-  padding:15px 8%;
-  backdrop-filter:blur(14px);
-  background:rgba(0,0,0,0.45);
+  position:fixed;top:0;width:100%;
+  padding:15px 40px;
   display:flex;justify-content:space-between;
-  z-index:1000;
+  background:rgba(2,6,23,.6);
+  backdrop-filter:blur(10px);
+  z-index:10;
 }
-nav a{color:white;margin-left:20px;text-decoration:none;}
-nav a:hover{color:#38bdf8}
+nav h1{
+  font-family:Orbitron;
+  color:var(--neon);
+}
+nav a{
+  color:white;
+  text-decoration:none;
+  margin-left:20px;
+}
+nav a:hover{color:var(--neon)}
 
 /* HERO */
 .hero{
-  height:100vh;
-  display:flex;flex-direction:column;
-  justify-content:center;align-items:center;
+  min-height:100vh;
+  display:flex;
+  align-items:center;
+  justify-content:center;
   text-align:center;
+  padding:100px 20px;
 }
-.hero h1{
-  font-size:60px;
-  background:linear-gradient(90deg,#38bdf8,#22d3ee);
-  -webkit-background-clip:text;
-  color:transparent;
+.hero h2{
+  font-family:Orbitron;
+  font-size:3rem;
 }
-.hero p{opacity:0.85;margin-top:15px;}
+.hero span{color:var(--neon)}
+.typing{
+  margin-top:15px;
+  font-size:1.2rem;
+  opacity:.85;
+}
+.btn{
+  display:inline-block;
+  margin:20px 10px;
+  padding:12px 30px;
+  border-radius:30px;
+  border:2px solid var(--neon);
+  color:var(--neon);
+  text-decoration:none;
+  transition:.3s;
+}
+.btn:hover{
+  background:var(--neon);
+  color:black;
+  box-shadow:0 0 20px var(--neon);
+}
 
 /* SECTIONS */
-section{padding:100px 10%;}
-.title{font-size:36px;color:#38bdf8;margin-bottom:30px;}
+section{padding:90px 10%}
+h3{
+  text-align:center;
+  font-family:Orbitron;
+  color:var(--neon);
+  font-size:2.3rem;
+  margin-bottom:50px;
+}
 
 /* CARDS */
-.card{
-  background:rgba(255,255,255,0.08);
-  backdrop-filter:blur(18px);
-  border-radius:20px;
-  padding:30px;
-  margin-bottom:30px;
-  box-shadow:0 25px 50px rgba(0,0,0,0.6);
-  transform:translateY(40px);
-  opacity:0;
-  transition:0.8s;
+.grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+  gap:30px;
 }
-.card.show{transform:translateY(0);opacity:1;}
+.card{
+  background:linear-gradient(145deg,#020d2b,#020617);
+  padding:30px;
+  border-radius:20px;
+  box-shadow:0 0 20px rgba(0,191,255,.15);
+  transition:.4s;
+}
+.card:hover{
+  transform:translateY(-12px);
+  box-shadow:0 0 45px rgba(0,247,255,.4);
+}
 
 /* SKILLS */
-.skills{
-  display:grid;
-  grid-template-columns:repeat(auto-fit,minmax(200px,1fr));
-  gap:20px;
+.skill{margin-bottom:20px}
+.bar{
+  height:8px;
+  background:#020617;
+  border-radius:10px;
+  overflow:hidden;
 }
-.skill{
-  background:rgba(255,255,255,0.1);
-  padding:25px;
-  border-radius:15px;
-}
-.skill h4{color:#38bdf8;margin-bottom:10px;}
-
-/* PROJECTS */
-.project h3{color:#38bdf8;}
-.project a{
-  display:inline-block;
-  margin-top:12px;margin-right:10px;
-  padding:8px 16px;
-  border-radius:25px;
-  background:#38bdf8;
-  color:#020617;
-  text-decoration:none;
-  font-size:14px;
+.fill{
+  height:100%;
+  background:linear-gradient(90deg,var(--blue),var(--neon));
 }
 
-/* SOCIAL */
-.social a{
-  margin-right:20px;
-  color:#38bdf8;
-  text-decoration:none;
+/* FOOTER */
+footer{
+  text-align:center;
+  padding:30px;
+  opacity:.6;
 }
 
-footer{text-align:center;padding:30px;opacity:0.6;}
-
-@media(max-width:768px){
-  .cursor,.cursor-ring{display:none;}
+/* REVEAL */
+.reveal{
+  opacity:0;
+  transform:translateY(40px);
+  transition:1s;
+}
+.reveal.active{
+  opacity:1;
+  transform:none;
 }
 </style>
 </head>
 
 <body>
 
-<div class="wallpaper">
-  <div class="sticker"></div>
-  <div class="sticker"></div>
-  <div class="sticker"></div>
-  <div class="sticker"></div>
-</div>
-
+<canvas id="particles"></canvas>
 <div class="cursor"></div>
-<div class="cursor-ring"></div>
 
 <nav>
-  <h3>Dhawal</h3>
+  <h1>Dhawal</h1>
   <div>
     <a href="#about">About</a>
     <a href="#skills">Skills</a>
@@ -177,95 +172,135 @@ footer{text-align:center;padding:30px;opacity:0.6;}
   </div>
 </nav>
 
+<!-- HERO -->
 <div class="hero">
-  <h1>Dhawal Katre</h1>
-  <p>Computer Engineering Student | Web Developer</p>
+  <div>
+    <h2>Hi, I'm <span>Dhawal Katre</span></h2>
+    <div class="typing" id="typing"></div>
+    <a class="btn" href="https://github.com/Dhawal-N-Katre" target="_blank">GitHub</a>
+    <a class="btn" href="https://www.linkedin.com/in/dhawal-katre-9222a737a" target="_blank">LinkedIn</a>
+  </div>
 </div>
 
-<section id="about">
-<h2 class="title">About Me</h2>
-<div class="card reveal">
-I am a Computer Engineering student with a strong interest in web development.
-I enjoy building responsive and user-friendly websites using HTML, CSS and JavaScript.
-I am continuously learning new technologies to grow as a developer.
-</div>
-</section>
-
-<section id="skills">
-<h2 class="title">Skills</h2>
-<div class="skills">
-  <div class="skill reveal"><h4>Frontend</h4>HTML, CSS, JavaScript</div>
-  <div class="skill reveal"><h4>Programming</h4>C++</div>
-  <div class="skill reveal"><h4>Tools</h4>Git, GitHub, VS Code</div>
+<!-- ABOUT -->
+<section id="about" class="reveal">
+<h3>About Me</h3>
+<div class="card">
+I am a Computer Engineering student learning <b>C, C++, HTML, CSS & JavaScript</b>.
+I work on real-world hardware + software projects like automation and renewable energy systems.
+My goal is to build impactful technology with strong logic and clean design.
 </div>
 </section>
 
-<section id="projects">
-<h2 class="title">Projects</h2>
-
-<div class="card project reveal">
-<h3>Portfolio Website</h3>
-<p>Modern animated personal portfolio.</p>
-<a href="#">Live Demo</a><a href="#">GitHub</a>
+<!-- SKILLS -->
+<section id="skills" class="reveal">
+<h3>Skills</h3>
+<div class="grid">
+<div class="card">
+<div class="skill">C / C++
+<div class="bar"><div class="fill" style="width:80%"></div></div>
 </div>
-
-<div class="card project reveal">
-<h3>Calculator App</h3>
-<p>JavaScript based calculator with clean UI.</p>
-<a href="#">Live Demo</a><a href="#">GitHub</a>
+<div class="skill">HTML
+<div class="bar"><div class="fill" style="width:85%"></div></div>
 </div>
-
-<div class="card project reveal">
-<h3>To-Do List</h3>
-<p>Task management web app.</p>
-<a href="#">Live Demo</a><a href="#">GitHub</a>
+<div class="skill">CSS
+<div class="bar"><div class="fill" style="width:80%"></div></div>
 </div>
-</section>
-
-<section id="contact">
-<h2 class="title">Contact</h2>
-<div class="card reveal">
-Email: katredhawal9211@gmail.com<br>
-Location: Nagpur<br><br>
-<div class="social">
-<a href="https://www.linkedin.com/in/dhawal-katre-9222a737a" target="_blank">LinkedIn</a>
-<a href="#">GitHub</a>
+<div class="skill">JavaScript
+<div class="bar"><div class="fill" style="width:65%"></div></div>
+</div>
 </div>
 </div>
 </section>
 
-<footer>© 2026 Dhawal Katre | Built with ❤</footer>
+<!-- PROJECTS -->
+<section id="projects" class="reveal">
+<h3>Projects</h3>
+<div class="grid">
+<div class="card">
+<h4>🏠 Home Automation System</h4>
+<p>Smart system to automatically control home appliances using sensors and logic control,
+improving energy efficiency and convenience.</p>
+</div>
+<div class="card">
+<h4>👣 Footstep Energy Generator</h4>
+<p>Generates electrical energy from human footsteps using mechanical-to-electrical
+energy conversion focused on renewable power.</p>
+</div>
+</div>
+</section>
+
+<!-- CONTACT -->
+<section id="contact" class="reveal">
+<h3>Contact</h3>
+<div class="card">
+<p>💻 Open for internships & projects</p>
+<p>🔗 Connect via GitHub & LinkedIn</p>
+</div>
+</section>
+
+<footer>© 2026 Dhawal Katre | Built with Tech ⚡</footer>
 
 <script>
-/* CURSOR */
+// CURSOR
 const cursor=document.querySelector(".cursor");
-const ring=document.querySelector(".cursor-ring");
-
 document.addEventListener("mousemove",e=>{
   cursor.style.left=e.clientX+"px";
   cursor.style.top=e.clientY+"px";
-  ring.style.left=e.clientX-20+"px";
-  ring.style.top=e.clientY-20+"px";
 });
 
-/* SCROLL REVEAL */
+// TYPING
+const text=["Computer Engineering Student","Web Developer","Automation & Tech Enthusiast"];
+let i=0,j=0;
+const typing=document.getElementById("typing");
+function type(){
+  if(j<text[i].length){
+    typing.textContent+=text[i][j++];
+    setTimeout(type,80);
+  }else{
+    setTimeout(erase,1500);
+  }
+}
+function erase(){
+  if(j>0){
+    typing.textContent=text[i].substring(0,--j);
+    setTimeout(erase,40);
+  }else{
+    i=(i+1)%text.length;
+    setTimeout(type,300);
+  }
+}
+type();
+
+// REVEAL
 const reveals=document.querySelectorAll(".reveal");
 window.addEventListener("scroll",()=>{
-  reveals.forEach(el=>{
-    if(el.getBoundingClientRect().top<window.innerHeight-100){
-      el.classList.add("show");
-    }
+  reveals.forEach(r=>{
+    if(r.getBoundingClientRect().top<window.innerHeight-100)
+      r.classList.add("active");
   });
 });
+
+// PARTICLES
+const c=document.getElementById("particles"),ctx=c.getContext("2d");
+let w,h,particles=[];
+function resize(){w=c.width=innerWidth;h=c.height=innerHeight}
+window.onresize=resize;resize();
+for(let i=0;i<80;i++)
+particles.push({x:Math.random()*w,y:Math.random()*h,vx:Math.random()-.5,vy:Math.random()-.5});
+function animate(){
+  ctx.clearRect(0,0,w,h);
+  particles.forEach(p=>{
+    p.x+=p.vx;p.y+=p.vy;
+    if(p.x<0||p.x>w)p.vx*=-1;
+    if(p.y<0||p.y>h)p.vy*=-1;
+    ctx.fillStyle="#00f7ff";
+    ctx.fillRect(p.x,p.y,2,2);
+  });
+  requestAnimationFrame(animate);
+}
+animate();
 </script>
 
 </body>
 </html>
-
-
-
-
-
-
-
-
